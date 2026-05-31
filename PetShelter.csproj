@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+   
+    <None Remove="cat.png" />
+    <None Remove="star.png" />
+    <None Remove="змейка.png" />
+    <None Remove="кость.png" />
+    <None Remove="ПРУЖИНКА-ЗАВИТУШКА.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="cat.png" />
+    <Resource Include="star.png" />
+    <Resource Include="змейка.png" />
+    <Resource Include="кость.png" />
+    <Resource Include="ПРУЖИНКА-ЗАВИТУШКА.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ShelterSolution\Model\Model.csproj" />
+  </ItemGroup>
+
+</Project>

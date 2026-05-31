@@ -1,0 +1,243 @@
+﻿<Window x:Class="PetShelter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetShelter"
+        mc:Ignorable="d"
+        Title="PetShelter" Height="700" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="157*"/>
+            <RowDefinition Height="68*"/>
+            <RowDefinition Height="117*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FF2A2C90" Offset="0.45"/>
+                <GradientStop Color="#FFF27BCF" Offset="0.45"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!--  ЗМЕЙКА НА ЗАДНЕМ ФОНЕ                         -->
+
+        <Image Source="/змейка.png" 
+               Stretch="Fill"
+               Opacity="0.95" Grid.RowSpan="3" Margin="7,73,-37,23" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-64.053"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+
+        <!--  ЗВЁЗДЫ        -->
+        <Image Source="/star.png" Width="216" Height="209" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-15,0,0,-11" RenderTransformOrigin="0.5,0.5" Grid.Row="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-26.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="/star.png" Width="269" Height="182" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-22,40,0" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="18.678"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="/star.png" Width="381" Height="182" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="718,0,0,0" RenderTransformOrigin="0.416,0.609" Grid.Row="2">
+        </Image>
+
+
+        <!-- ГЛАВНАЯ СЕТКА ИНТЕРФЕЙСА (Разделяет экран ) -->
+        <Grid Margin="20,10,20,15" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90" />
+                <!-- Шапка: Текст "FUR FRIEND" и лапки -->
+                <RowDefinition Height="*" />
+                <!-- Центр: Панель с котиком и панель фильтров -->
+                <RowDefinition Height="65" />
+                <!-- Низ Кнопка поиска -->
+            </Grid.RowDefinitions>
+
+
+            <!--  текст "FUR FRIEND") -->
+
+            <Grid Grid.Row="0">
+                <!-- кость            -->
+                <Image Source="/кость.png" Width="267" Height="204" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="452,-67,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-6.907"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="8.177"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <StackPanel Margin="60,0,0,0" VerticalAlignment="Center">
+                    <TextBlock Text="🐾FUR FRIEND" Foreground="#FFF27BCF" FontSize="44" FontFamily="Arial Black" FontWeight="Bold"/>
+                    <TextBlock Text="ADOPT LOVE" Foreground="White" FontSize="12" FontFamily="Arial Black" Margin="5,-5,0,0"/>
+                </StackPanel>
+            </Grid>
+
+
+            <!--  ЦЕНТРАЛЬНЫЙ БЛОК   -->
+
+            <Grid Grid.Row="1" Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.1*" />
+                    <!-- Левая колонка под кота -->
+                    <ColumnDefinition Width="1.4*" />
+                    <!-- Правая колонка под списки -->
+                </Grid.ColumnDefinitions>
+
+                <!--  "ADOPT DON'T SHOP!" И КОТ -->
+                <Border Grid.Column="0" Background="#FF9F00" CornerRadius="15" Margin="10,0,15,0">
+                    <Grid>
+                        <!-- Слоган (самый первый слой) -->
+                        <StackPanel Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <TextBlock Text="ADOPT" Foreground="White" FontSize="26" FontFamily="Arial Black"/>
+                            <TextBlock Text="     DON'T" Foreground="#FFF27BCF" FontSize="18" FontFamily="Arial Black" Margin="0,-3,0,0"/>
+                            <TextBlock Text="SHOP!" Foreground="White" FontSize="26" FontFamily="Arial Black" Margin="0,-3,0,0"/>
+                            <TextBlock Text="🐾" Foreground="White" FontSize="26" FontFamily="Arial Black" Margin="0,-3,0,0"/>
+                        </StackPanel>
+
+
+                        <!--  КОТ                                    -->
+
+                        <Image Source="cat.png" 
+                               Stretch="Uniform" 
+                               VerticalAlignment="Bottom" 
+                               HorizontalAlignment="Right" 
+                               Width="350" 
+                               Margin="0,0,-46,-29"/>
+
+                        <Border Background="#1F4E9E" 
+                                BorderBrush="White" 
+                                BorderThickness="2" 
+                                CornerRadius="8" 
+                                HorizontalAlignment="Right" 
+                                VerticalAlignment="Bottom" 
+                                Margin="0,0,176,288" 
+                                Padding="8,4,8,4" Height="45" Width="177">
+                            <StackPanel>
+                                <TextBlock Text="TAKE ME HOME! 🐾" 
+                                           Foreground="White" 
+                                           FontFamily="Arial Black" 
+                                           FontSize="13" RenderTransformOrigin="0.5,0.5" 
+                                           >
+                                    <TextBlock.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="-0.953"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                                <TextBlock Text="I'LL BE YOUR BEST FRIEND" 
+                                           Foreground="#FFF27BCF" 
+                                           FontFamily="Arial Black" 
+                                           FontSize="8" 
+                                           HorizontalAlignment="Center"
+                                           Margin="0,1,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+
+
+                        <!-- ПРУЖИНКА-ЗАВИТУШКА -->
+
+
+                        <Image Source="/ПРУЖИНКА-ЗАВИТУШКА.png" 
+                               Width="410" 
+                               Height="301" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Top" 
+                               Margin="-85,228,0,0"
+                               Stretch="Uniform"
+                               Opacity="0.9" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="50.658"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+
+                    </Grid>
+                </Border>
+
+                <!-- 🧱 ПРАВАЯ КОЛОНКА: ВНУТРЕННИЙ СИНЕ-ОРАНЖЕВЫЙ БЛОК ФИЛЬТРОВ И СТАТИСТИКИ -->
+                <Border Grid.Column="1" Background="#FF9F00" CornerRadius="15" Margin="15,0,10,0" Padding="20,15,20,15">
+                    <StackPanel>
+
+                        <!-- Синяя внутренняя плашка заголовка "MORE THAN A PET" -->
+                        <Border Background="#1F4E9E" CornerRadius="8" Padding="10,8,10,8" Margin="0,0,0,15">
+                            <StackPanel HorizontalAlignment="Center">
+                                <TextBlock Text="MORE THAN A PET" Foreground="White" FontSize="22" FontFamily="Arial Black" HorizontalAlignment="Center"/>
+                                <TextBlock Text="I'LL BE YOUR BEST FRIEND" Foreground="#FFF27BCF" FontSize="9" FontFamily="Arial Black" HorizontalAlignment="Center" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Поля выпадающих списков фильтрации -->
+                        <TextBlock Text="ВЫБЕРИТЕ ПРИЮТ:" Foreground="#FF2A2C90" FontSize="10" FontWeight="Black" Margin="2,0,0,3"/>
+                        <ComboBox x:Name="cmbShelters" Height="30" Margin="0,0,0,12" FontSize="12" FontWeight="Bold" SelectionChanged="FilterChanged"/>
+
+                        <TextBlock Text="ФОРМАТ ДОКУМЕНТОВ:" Foreground="#FF2A2C90" FontSize="10" FontWeight="Black" Margin="2,0,0,3"/>
+                        <ComboBox x:Name="cmbFormats" Height="30" Margin="0,0,0,12" FontSize="12" FontWeight="Bold" SelectionChanged="CmbFormats_SelectionChanged"/>
+
+                        <TextBlock Text="ВИД ЖИВОТНОГО:" Foreground="#FF2A2C90" FontSize="10" FontWeight="Black" Margin="2,0,0,3"/>
+                        <ComboBox x:Name="cmbPetTypes" Height="30" Margin="0,0,0,15" FontSize="12" FontWeight="Bold" SelectionChanged="FilterChanged"/>
+
+                        <!-- Галочка (CheckBox) -->
+                        <CheckBox x:Name="chkOpenTerritory" Content="Только открытый участок" Foreground="White" FontFamily="Arial Black" FontSize="11" Margin="2,0,0,15" Checked="FilterChanged" Unchecked="FilterChanged"/>
+
+                        <!-- Контрастная белая плашка для аналитики данных (Статистика базы) -->
+                        <Border Background="White" CornerRadius="10" MinHeight="100" VerticalAlignment="Top" Padding="12">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+
+                                    <TextBlock Text="СТАТИСТИКА БАЗЫ:" Foreground="#FF2A2C90" FontSize="11" FontWeight="Black" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <TextBlock x:Name="txtStatistics" Text="Выберите фильтры для отображения аналитики по приютам..." FontSize="13" FontFamily="Arial" FontWeight="Bold" Foreground="#1F4E9E" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                </Border>
+                <Button x:Name="btnShowPets"
+        Content="TAKE ME HOME (ПОИСК)" 
+        Click="BtnShowPets_Click" 
+        Height="45" 
+        VerticalAlignment="Bottom"
+        Margin="260,0,221,-67" 
+        Background="#FF9F00" Foreground="White" 
+        FontFamily="Arial Black" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="2">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
